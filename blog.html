@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="organic-stripe">
+    <meta name="bpaas-design-theme" content="kr-organic-stripe">
+    <meta name="description" content="화곡 셔츠룸 블로그: 주식투자와 셔츠룸의 상관관계, 마포 지역 투자자들이 찾는 프리미엄 공간 이야기.">
+    <meta name="keywords" content="화곡 셔츠룸, 마포 셔츠룸, 주식투자, 셔츠룸 블로그, 주식투자 블로그, 홍대 셔츠룸">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sf-t3-1779642675702-410.vercel.app/blog">
+    <meta property="og:title" content="화곡 셔츠룸 블로그 | 주식투자와 프리미엄 공간의 만남">
+    <meta property="og:description" content="화곡 셔츠룸에서 주식투자 이야기 나누며 프리미엄 시간을 즐기세요. 마포 지역 최고 시설, 합리적 가격.">
+    <title>블로그 | 화곡 셔츠룸</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f4f1ea;
+            color: #2c2c2c;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #d4a373;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 28px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #d4a373;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        .nav-mobile {
+            display: none;
+        }
+
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, #e8ddd0 0%, #f4f1ea 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 32px;
+        }
+
+        .blog-single {
+            padding: 60px 0 100px;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 48px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .blog-card h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 28px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 16px;
+        }
+
+        .blog-card p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .blog-card strong {
+            color: #1a1a1a;
+        }
+
+        .blog-card .highlight-box {
+            background: #f9f6f0;
+            border-left: 4px solid #d4a373;
+            padding: 20px 24px;
+            border-radius: 8px;
+            margin: 28px 0;
+        }
+
+        .tel-link {
+            display: inline-block;
+            background: #d4a373;
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .tel-link:hover {
+            background: #c4945f;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #aaa;
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-mobile {
+                display: flex;
+                flex-direction: column;
+                background: #1a1a1a;
+                padding: 16px 24px;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                z-index: 999;
+            }
+            .nav-mobile a {
+                color: #ddd;
+                text-decoration: none;
+                padding: 10px 0;
+                border-bottom: 1px solid #333;
+            }
+            .blog-card {
+                padding: 24px;
+            }
+            .blog-card h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <div class="logo"><span>화곡</span> 셔츠룸</div>
+            <nav>
+                <a href="/">홈</a>
+                <a href="/about">소개</a>
+                <a href="/blog">블로그</a>
+                <a href="/contact">문의</a>
+            </nav>
+            <div class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="nav-mobile" id="navMobile">
+            <a href="/">홈</a>
+            <a href="/about">소개</a>
+            <a href="/blog">블로그</a>
+            <a href="/contact">문의</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>주식투자,<br>셔츠룸에서 더 재밌게</h1>
+                <p>화곡 셔츠룸 블로그에 오신 걸 환영합니다. 형, 여기서 투자 얘기할 때 진짜 집중 잘 돼. 한번 읽어봐.</p>
+                <a href="tel:010-6279-0862" class="tel-link">📞 010-6279-0862</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-single">
+        <div class="container">
+            <div class="blog-card">
+                <h2>주식투자와 셔츠룸, 의외로 찰떡궁합?</h2>
+                <div class="blog-meta">2025.04.25 · 화곡 셔츠룸 에디터</div>
+                <p>형, 요즘 장 너무 안 좋지? 나도 멘탈 바사삭 깨질 뻔했어. 근데 말이야, <strong>화곡 셔츠룸</strong>에서 형들이랑 이런 얘기 나누다 보면 오히려 투자 아이디어가 더 잘 떠오르더라고. 완전 신세계임.</p>
+                <p>마포 쪽에서 셔츠룸 자주 가는 형들 알지? 여기 분위기가 딱 비즈니스 캐주얼? 그러니까, 너무 무겁지도 않고 그렇다고 가볍지도 않은 딱 중간. 그래서 주식투자 얘기하기에 진짜 좋아. 나는 여기서 테슬라 물타기 얘기하다가 오히려 수익 낸 적도 있음. ㅋㅋ</p>
+                <div class="highlight-box">
+                    <strong>💡 형을 위한 꿀팁:</strong> 화곡 셔츠룸 예약할 때 010-6279-0862로 전화하면 단체 할인도 가능하다더라. 주식투자 모임 열기에 딱이야.
+                </div>
+                <p>홍대나 신촌 쪽도 괜찮지만, <strong>화곡 셔츠룸</strong>은 주차도 편하고 시설이 완전 프리미엄급이야. 솔직히 말해서, 나는 여기 오면 주식 스트레스도 풀리고 새로운 전략도 생각나서 일석이조임. 형들도 한번 경험해봐. 후회 안 할 거야.</p>
+                <p>자, 오늘은 여기까지. 다음 블로그 글에서는 내가 실제로 써먹은 단타 전략 하나 풀어줄게. 기대해도 좋아. 🔥</p>
+                <a href="tel:010-6279-0862" class="tel-link">📞 지금 전화해서 예약하기</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>화곡 셔츠룸 | 서울 마포구 | 주식투자와 함께하는 프리미엄 공간</p>
+            <p>문의전화: 010-6279-0862</p>
+            <p style="margin-top: 12px; font-size:0.8rem;">© 2025 화곡 셔츠룸 All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById('navMobile');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>

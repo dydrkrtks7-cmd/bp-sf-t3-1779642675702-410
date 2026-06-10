@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="organic-stripe">
+    <meta name="bpaas-design-theme" content="kr-organic-stripe">
+    <meta name="description" content="화곡 셔츠룸의 모든 정보를 한눈에. 위치, 가격, 이용안내, 주식투자 모임까지. 마포 지역 최고의 셔츠룸, 지금 바로 확인하세요.">
+    <meta name="keywords" content="화곡 셔츠룸, 마포 셔츠룸, 화곡 셔츠룸 정보, 주식투자, 셔츠룸 가격, 셔츠룸 위치, 서울 셔츠룸">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sf-t3-1779642675702-410.vercel.app/info">
+    <meta property="og:title" content="화곡 셔츠룸 | 정보 & 이용안내">
+    <meta property="og:description" content="화곡 셔츠룸의 모든 정보를 확인하세요. 주식투자 동호회 모임부터 프리미엄 시설까지, 마포에서 가장 핫한 셔츠룸입니다.">
+    <title>화곡 셔츠룸 | 정보 & 이용안내</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #1a1a2e;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #e94560;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #e94560;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .nav-mobile {
+            display: none;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1a1a2e;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .card p {
+            color: #555;
+            line-height: 1.8;
+        }
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+        .info-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        .info-list strong {
+            min-width: 120px;
+            color: #1a1a2e;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .faq-item h4 {
+            color: #e94560;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .faq-item p {
+            color: #555;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #e94560 0%, #c23152 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .tel-link {
+            display: inline-block;
+            background: #fff;
+            color: #e94560;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: transform 0.3s;
+        }
+        .tel-link:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            nav {
+                display: none;
+            }
+            .nav-mobile {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: #1a1a2e;
+                padding: 20px;
+                flex-direction: column;
+            }
+            .nav-mobile a {
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 0;
+                border-bottom: 1px solid #333;
+            }
+            .nav-mobile.active {
+                display: flex;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .info-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .info-list strong {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">화곡<span>셔츠룸</span></a>
+            <nav>
+                <a href="/">홈</a>
+                <a href="/info">정보</a>
+                <a href="/price">가격</a>
+                <a href="/review">후기</a>
+                <a href="/contact">문의</a>
+            </nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="nav-mobile" id="mobileMenu">
+            <a href="/">홈</a>
+            <a href="/info">정보</a>
+            <a href="/price">가격</a>
+            <a href="/review">후기</a>
+            <a href="/contact">문의</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>화곡 셔츠룸, 모든 정보를 알려드립니다</h1>
+            <p>주식투자 이야기하며 프리미엄 시간을 보내고 싶다면? 위치부터 이용방법까지, 궁금한 건 다 물어보세요!</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">기본 정보</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📍 위치 & 오시는 길</h3>
+                    <ul class="info-list">
+                        <li><strong>주소</strong> 서울특별시 마포구 화곡로 123 (화곡동)</li>
+                        <li><strong>교통</strong> 지하철 2호선 화곡역 3번 출구 도보 5분</li>
+                        <li><strong>주차</strong> 건물 내 전용 주차장 완비 (최대 20대)</li>
+                        <li><strong>주변</strong> 홍대입구, 합정역, 상수역 인근</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>⏰ 영업 시간</h3>
+                    <ul class="info-list">
+                        <li><strong>평일</strong> 오후 3시 ~ 익일 오전 4시</li>
+                        <li><strong>주말</strong> 오후 2시 ~ 익일 오전 5시</li>
+                        <li><strong>공휴일</strong> 오후 2시 ~ 익일 오전 5시</li>
+                        <li><strong>연중무휴</strong> (명절 당일 제외)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #fff;">
+        <div class="container">
+            <h2 class="section-title">시설 & 서비스</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>🛋️ 프리미엄 룸</h3>
+                    <p>모든 룸은 최신 인테리어로 꾸며져 있어요. 4인실부터 12인실까지 다양한 사이즈, 단체 모임도 OK. 빔프로젝터, 고급 사운드 시스템 완비로 주식 차트 분석도 거뜬해요!</p>
+                </div>
+                <div class="card">
+                    <h3>📊 주식투자 특화</h3>
+                    <p>각 룸마다 65인치 이상 대형 모니터 설치. 실시간 주식 차트 확인 가능, 종목 분석 토론하기 최적화된 환경이에요. 형아들끼리 와서 차트 보면서 맥주 한잔? 완전 럭셔리함.</p>
+                </div>
+                <div class="card">
+                    <h3>🍽️ 푸드 & 음료</h3>
+                    <p>셔츠룸 하면 빠질 수 없는 안주! 고급 양념치킨, 떡볶이, 모둠전 등 기본 안주 무제한. 맥주, 소주, 양주도 합리적인 가격으로 준비되어 있어요.</p>
+                </div>
+                <div class="card">
+                    <h3>🎤 부대시설</h3>
+                    <p>노래방 시스템, 당구대, 보드게임까지! 주식 얘기하다 지루해지면? 바로 게임 모드로 전환. 분위기 전환 완전 좋아요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">이용 안내</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📋 예약 방법</h3>
+                    <p>전화 예약이 가장 빠릅니다. <strong>010-6279-0862</strong>로 전화주시면 친절하게 안내해드려요. 단체 예약은 2~3일 전에 미리 말씀주시면 더 좋은 자리로 준비해드릴게요!</p>
+                </div>
+                <div class="card">
+                    <h3>💡 이용 팁</h3>
+                    <p>주말은 항상 인기 많아요. 특히 주식시장 마감 후인 저녁 7시~10시가 피크 타임. 미리 예약 안 하면 자리 없을 수도 있어요. 참고로 첫 방문 손님에게는 특별 할인도 있어요!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #fff;">
+        <div class="container">
+            <h2 class="section-title">자주 묻는 질문</h2>
+            <div class="faq-item">
+                <h4>Q: 주식투자 모임만 가능한가요?</h4>
+                <p>A: 아니요! 주식 얘기 안 해도 돼요. 그냥 친구들이랑 술 한잔 하러 와도 완전 환영. 다만, 주식 좋아하는 형아들이 많아서 자연스럽게 주식 얘기가 나오는 분위기예요.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: 주차는 무료인가요?</h4>
+                <p>A: 네, 건물 내 전용 주차장 이용 무료예요. 단, 주말에는 주차장이 붐빌 수 있으니 대중교통 이용 추천드려요. 화곡역에서 걸어오는 길도 완전 편해요.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: 최소 인원이 있나요?</h4>
+                <p>A: 2명부터 이용 가능해요. 혼자 오셔도 좋지만, 셔츠룸 특성상 둘이서 오시는 걸 추천드려요. 혼자 오시면 저희가 친절하게 케어해드립니다!</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: 예약 취소는 어떻게 하나요?</h4>
+                <p>A: 이용 2시간 전까지 전화로 취소 가능해요. 노쇼하면 좀 곤란하니까 꼭 연락주세요. 저희도 준비하는 게 있잖아요?</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>지금 바로 예약하세요!</h2>
+            <p>형아, 주식 얘기하며 맥주 한잔 하고 싶다면? 전화 한 통이면 끝!</p>
+            <a href="tel:010-6279-0862" class="tel-link">📞 010-6279-0862</a>
+            <p style="margin-top: 20px; font-size: 0.9rem;">상담은 언제나 환영, 부담 갖지 말고 전화주세요!</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>화곡 셔츠룸 | 서울 마포구 화곡로 123 | 대표전화: 010-6279-0862</p>
+            <p style="margin-top: 10px;">© 2024 화곡 셔츠룸. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
